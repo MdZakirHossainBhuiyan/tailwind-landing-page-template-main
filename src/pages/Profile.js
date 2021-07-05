@@ -9,7 +9,7 @@ const Profile = () => {
     const { id } = useParams();
     const user = users.find(uId => uId.id === id);
 
-    console.log(user.isLoggedIn);
+    console.log("++++ ", user);
 
     const history = useHistory();
 
@@ -31,30 +31,30 @@ const Profile = () => {
                 <section className="bg-gradient-to-b from-gray-100 to-white">
                     <div className="max-w-6xl mx-auto px-4 sm:px-6">
                         <div className="pt-32 pb-12 md:pt-40 md:pb-5">
-                            <h3 className="h3 my-5">Welcome, {user.name}.</h3>
+                            <h3 className="h3 my-5">Welcome, {user ? user.name : users.name}.</h3>
                         </div>
                         <div className="w-6xl mx-10 mb-5 rounded justify-center items-center">
                             <table class="table-fixed border border-black mx-20">
                                 <tbody>
                                     <tr class="bg-white">
                                         <th className="w-60 h-10">Name:</th>
-                                        <td className="w-80">{user.name}</td>
+                                        <td className="w-80">{user ? user.name : users.name}</td>
                                     </tr>
                                     <tr class="bg-black text-white h-10">
                                         <th>Email:</th>
-                                        <td>{user.email}</td>
+                                        <td>{user ? user.email : users.email}</td>
                                     </tr>
                                     <tr class="bg-white h-10">
                                         <th>Date of Birth:</th>
-                                        <td>{user.date}</td>
+                                        <td>{user ? user.date : users.date}</td>
                                     </tr>
                                     <tr class="bg-black text-white h-10">
                                         <th>Profession:</th>
-                                        <td>{user.profession}</td>
+                                        <td>{user ? user.profession : users.profession}</td>
                                     </tr>
                                     <tr class="bg-white h-10">
                                         <th>Password:</th>
-                                        <td>{user.password}</td>
+                                        <td>{user ? user.password : users.password}</td>
                                     </tr>
                                 </tbody>
                             </table>

@@ -36,10 +36,9 @@ function SignIn() {
     event.preventDefault();
     if (user.email && user.password) {
 
-      const validEmail = users.find( checkEmail => checkEmail.email === user.email);
-      const validPassword = users.find( checkPassword => checkPassword.password === user.password);
+      const validEmail = users.find( check => check.email === user.email && check.password === user.password);
 
-      if(validEmail && validPassword){
+      if(validEmail){
         validEmail.isLoggedIn = true;
         history.push('/user/'+validEmail.id);
       }

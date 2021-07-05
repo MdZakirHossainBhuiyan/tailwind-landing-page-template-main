@@ -18,6 +18,7 @@ function Update() {
     date: '',
     profession: '',
     password: '',
+    isLoggedIn: true,
   })
 
   const handleBlur = (event) => {

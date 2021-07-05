@@ -8,6 +8,7 @@ function SignUp() {
   const history = useHistory();
 
   const [user, setUser] = useState({
+    isLoggedIn: false,
     name: '',
     email: '',
     date: '',
@@ -46,7 +47,9 @@ function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (user.name && user.email && user.date && user.profession && user.password) {
-      setUsers([...users, {id: 4, name:user.name, email:user.email, date:user.date, profession:user.profession, password:user.password, isLoggedIn: false}])
+      setUsers([...users, {id: '4', name:user.name, email:user.email, date:user.date, profession:user.profession, password:user.password, isLoggedIn: user.isLoggedIn}])
+
+      console.log(users);
 
       history.push('/signin');
     }
