@@ -10,7 +10,7 @@ function Update() {
   const {id} = useParams();
   const userDetail = users.find(uId => uId.id === id);
 
-  const uId = id-1
+  const arrayIndex = id-1;
 
   const [user, setUser] = useState({
     name: '',
@@ -53,11 +53,11 @@ function Update() {
     event.preventDefault();
 
     if(user.name && user.email && user.date && user.profession && user.password){
-        users[uId].name = user.name;
-        users[uId].email = user.email;
-        users[uId].date = user.date;
-        users[uId].profession = user.profession;
-        users[uId].password = user.password;
+        users[arrayIndex].name = user.name;
+        users[arrayIndex].email = user.email;
+        users[arrayIndex].date = user.date;
+        users[arrayIndex].profession = user.profession;
+        users[arrayIndex].password = user.password;
         history.push('/user/'+id);
     }
   }

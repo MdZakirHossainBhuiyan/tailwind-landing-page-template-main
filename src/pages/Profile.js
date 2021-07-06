@@ -9,8 +9,6 @@ const Profile = () => {
     const { id } = useParams();
     const user = users.find(uId => uId.id === id);
 
-    console.log("++++ ", user);
-
     const history = useHistory();
 
     const handleUpdate = (event) => {
